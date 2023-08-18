@@ -12,19 +12,19 @@ const progress_div=document.getElementById('progress-div');
 const songs=[{
     name:'Song-1',
     title:'CJ-Whoopty-remix',
-    artist:'CJ-Whoopty',
+    artist:'By CJ-Whoopty',
     img:'img-1'
 },
 {
     name:'Song-2',
     title:'Lion Roar',
-    artist:'Alex&Rus',
+    artist:'By Alex&Rus',
     img:'img-2'
 },
 {
     name:'Song-3',
     title:'Fearless',
-    artist:'Lost Sky',
+    artist:'By Lost Sky',
     img:'img-3'
 }
 ]
@@ -64,7 +64,17 @@ artist.textContent=songs.artist;
 music.src="audios/"+songs.name+".mp3";
 img.src="images/"+songs.img+".jpg";
 }
+
+
+
+
+
 songindex=0;
+
+
+
+
+
 const nextSong=()=>{
     songindex=(songindex+1)%songs.length;
     loadSong(songs[songindex]);
@@ -72,11 +82,22 @@ const nextSong=()=>{
 }
 
 
+
+
 const prevSong=()=>{
     songindex=(songindex-1+songs.length)%songs.length;
     loadSong(songs[songindex]);
     playmusic();
 }
+
+
+
+
+
+
+
+
+
 
 // progress js works
 
@@ -111,6 +132,26 @@ progress_div.addEventListener('click',(event)=>{
 let move_progress=(event.offsetX/event.srcElement.clientWidth)*duration;
 music.currentTime=move_progress;
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //  call next song after ending
 music.addEventListener('ended',nextSong)
